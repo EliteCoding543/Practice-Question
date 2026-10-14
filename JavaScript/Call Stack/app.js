@@ -40,7 +40,8 @@ function greet(){
 
 function test(callBack){
     callBack()
-    console.log(greet === callBack) // true same refernce par point kr rhe h
+    console.log(greet === callBack)
+    // greet = callBack() // true same refernce par point kr rhe h
 }
 
 test(greet)
