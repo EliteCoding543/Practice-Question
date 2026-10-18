@@ -1,9 +1,10 @@
 import React from 'react'
+import Tudo from './components/Tudo'
 
 function App() {
   return (
     <div>
-      <h1>Redux</h1>
+      <Tudo />
     </div>
   )
 }

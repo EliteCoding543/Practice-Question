@@ -1,8 +1,8 @@
-// if ([]) {
+// if (![]) {
 //   console.log("Truthy");  
 // } else {
-// //   console.log("Falsy");
-// // }
+//   console.log("Falsy");
+// }
 
 // // if([] == false){
 // //     console.log("Truthy")
