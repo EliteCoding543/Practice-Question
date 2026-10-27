@@ -1,38 +1,34 @@
+const arr = [8, 12, 34, 7, 20, 19, 10];
 
-const arr = [12, 31, 35, 8, 17, 32];
+const quickSort = (arr, start, end) => {
+    if(start < end){
+        let indexPivot = partiton(arr,start, end)
 
-const quickSorting = (arr, start, end) => {
-    if (start < end) {
-        const pivotIndex = partition(arr, start, end);
-
-        // Left half
-        quickSorting(arr, start, pivotIndex - 1);
-
-        // Right half
-        quickSorting(arr, pivotIndex + 1, end);
+        // Left half call 
+        quickSort(arr, start, indexPivot - 1);
+        
+        // Right half call 
+        quickSort(arr, start + 1, end)
     }
 
     return arr;
-};
+}
 
-function partition(arr, start, end) {
+const partiton = (arr, start, end) => {
     let indx = start - 1;
-    const pivot = arr[end];
+    let pivot = arr[end]
 
-    for (let j = start; j < end; j++) {
-        if (arr[j] < pivot) {
-            indx++;
-
-            [arr[indx], arr[j]] = [arr[j], arr[indx]];
+    for(let j = start; j < end; j++){
+        if(arr[j] < pivot){
+            indx++
+            [arr[indx], arr[j]] = [arr[j], arr[indx]]
         }
     }
 
-    indx++;
+    indx++
+    [arr[indx], arr[end]] = [arr[end], arr[indx]]
 
-    // Pivot ko correct position par rakho
-    [arr[indx], arr[end]] = [arr[end], arr[indx]];
-
-    return indx;
+    return indx
 }
 
-console.log(quickSorting(arr, 0, arr.length - 1));
+console.log(quickSort(arr, start = 0, end = arr.length - 1));
