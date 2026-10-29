@@ -7,11 +7,7 @@ export const tudoSlice = createSlice({
      },
      reducers : {
         addask : (state, action) => {
-            state.tudos.push({
-               id : Date.now(),
-               text : action.payload,
-               complate : false
-            })
+            state.tudos.push({ id : Date.now(), text : action.payload, complate : false })
         },
 
         removetask : (state, action) => {
